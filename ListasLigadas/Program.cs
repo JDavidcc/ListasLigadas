@@ -20,6 +20,11 @@ namespace Listas
             miLista.Adicionar(15);
 
             miLista.Transversa();
+
+            Console.WriteLine(miLista.BuscarAnterior(123));
+
+            //Console.WriteLine(miLista.BuscarIndice(9));
+
             //Console.WriteLine(miLista.EstaVacio());
 
             //miLista.Vaciar();
@@ -27,8 +32,8 @@ namespace Listas
             //miLista.Transversa();
             //Console.WriteLine(miLista.EstaVacio());
 
-            CNodo encontrado = miLista.Buscar(17);
-            Console.WriteLine(encontrado);
+            //CNodo encontrado = miLista.Buscar(17);
+            //Console.WriteLine(encontrado);
 
         }
     }
