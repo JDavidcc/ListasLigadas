@@ -176,7 +176,55 @@ namespace Listas
             trabajo.Siguiente = temp;
         }
 
+        public void InsertarInicio(int pDato)
+        {
+            //crear nodo temporal
+            CNodo temp = new CNodo();
+            temp.Dato = pDato;
 
+            //conectamos el temporal a la lista
+            temp.Siguiente=ancla.Siguiente;
+
+            //conecta el ancla a temporal
+            ancla.Siguiente=temp;
+        }
+        //obteiene la referencia al nodo dado el indice
+        public CNodo ObtenPorIndice(int pIndice)
+        {
+            CNodo trabajo2 = null;
+            int indice = -1;
+            trabajo = ancla;
+
+            while (trabajo.Siguiente != null)
+            {
+                trabajo = trabajo.Siguiente; 
+                indice++;
+
+                if (indice == pIndice)
+                    trabajo2=trabajo;
+            }
+            return trabajo2;
+        }
+        //Creamos un indexer
+        public int this[int pIndice]
+        {
+            get
+            {
+                //esto da error si trabajo es igual null
+                trabajo = ObtenPorIndice(pIndice);
+
+                return trabajo.Dato;
+            }
+
+            set
+            {
+                trabajo=ObtenPorIndice(pIndice);
+                if (trabajo!=null)
+                {
+                    trabajo.Dato = value;
+                }
+            }
+        }
 
     }
 }
