@@ -13,11 +13,23 @@ namespace Listas
             CListaligada miLista = new CListaligada();
 
             miLista.Adicionar(3);
-            miLista.Adicionar(4);
-            miLista.Adicionar(2);
-            miLista.Adicionar(1);
+            miLista.Adicionar(5);
+            miLista.Adicionar(7);
+            miLista.Adicionar(9);
+            miLista.Adicionar(11);
+            miLista.Adicionar(15);
 
             miLista.Transversa();
+            //Console.WriteLine(miLista.EstaVacio());
+
+            //miLista.Vaciar();
+
+            //miLista.Transversa();
+            //Console.WriteLine(miLista.EstaVacio());
+
+            CNodo encontrado = miLista.Buscar(17);
+            Console.WriteLine(encontrado);
+
         }
     }
 }

@@ -64,7 +64,44 @@ namespace Listas
             //ligar ultimo nodo encontrado con el recien creado
             trabajo.Siguiente = temp;
         }
-        
+        //Vacia la lista
+        public void Vaciar()
+        {
+            ancla.Siguiente = null;
+        }
+
+        //verifica vacio
+        public bool EstaVacio()
+        {
+            if (ancla.Siguiente == null)
+                return true;
+            else 
+                return false;
+        }
+
+        //regresa el nodo con la primera ocurriencia del dato
+        public CNodo Buscar(int pDato)
+        {
+            if (EstaVacio() == true)
+                return null;
+
+            trabajo2 = ancla;
+
+            //recorremos para ver si lo encuentra
+            while (trabajo2.Siguiente!=null)
+            {
+                trabajo2 = trabajo2.Siguiente;
+                //si lo encuentra lo regresa
+                if (trabajo2.Dato == pDato)
+                    return trabajo2;
+
+            }
+            //no se encuentra
+            return null;
+        }
+
+
+
 
     }
 }
