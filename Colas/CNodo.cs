@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Listas
+namespace Colas
 {
     class CNodo
     {
@@ -12,7 +12,7 @@ namespace Listas
         private int dato;
         //sig nodo
         private CNodo siguiente = null;
-        
+
         //propiedades
         public int Dato { get => dato; set => dato = value; }
         internal CNodo Siguiente { get => siguiente; set => siguiente = value; }
@@ -23,4 +23,5 @@ namespace Listas
             return string.Format("[{0}]", dato);
         }
     }
+
 }

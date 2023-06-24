@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Listas
 {
-    internal class Pilas2
+    internal class Pilas
     {
+
     }
 }
