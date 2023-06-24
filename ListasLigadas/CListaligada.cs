@@ -132,5 +132,51 @@ namespace Listas
 
         }
 
+        //Borra la primera ocurrencia del dato
+        public void Borrar(int pDato)
+        {
+            //Verifica que tiene datos
+            if (EstaVacio() == true)
+                return;
+
+            //Busca los nodos con los que trabaja
+            CNodo anterior = BuscarAnterior(pDato);
+
+            CNodo encontrado = Buscar(pDato);
+
+            //si no hay nodo a borrar, sale
+            if (encontrado == null)
+                return;
+
+            //brincamos el nodo
+            anterior.Siguiente = encontrado.Siguiente;
+
+            //quitar el actual de la lista
+            encontrado.Siguiente = null;
+        }
+        //inserta el dato pValor depues de la primera ocurrencia del dato pasado a pDonde
+
+        public void Insertar (int pDonde, int pValor)
+        {
+            //Encontramos la posicion donde vamos a insertar
+            trabajo=Buscar(pDonde);
+
+            //Verificamos que exista donde vamos a insertar
+            if (trabajo == null)
+                return;
+
+            //crea el nodo temporal a insertar
+            CNodo temp = new CNodo();
+            temp.Dato = pValor;
+
+            //conectamos el temporal a la lista
+            temp.Siguiente=trabajo.Siguiente;
+
+            //conectamos trabajo a temporal
+            trabajo.Siguiente = temp;
+        }
+
+
+
     }
 }

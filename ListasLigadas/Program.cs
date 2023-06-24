@@ -21,7 +21,12 @@ namespace Listas
 
             miLista.Transversa();
 
-            Console.WriteLine(miLista.BuscarAnterior(123));
+            miLista.Insertar(1, 20);
+            //miLista.Borrar(2);
+
+            miLista.Transversa();
+
+            //Console.WriteLine(miLista.BuscarAnterior(123));
 
             //Console.WriteLine(miLista.BuscarIndice(9));
 
